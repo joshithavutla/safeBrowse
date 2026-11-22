@@ -1,0 +1,433 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f8fb;
+    color: #222;
+    text-align: center;
+}
+
+h1 {
+    background-color: #123b5d;
+    color: white;
+    margin: 0;
+    padding: 30px;
+    font-size: 40px;
+}
+
+h2 {
+    color: #1769aa;
+    margin-top: 40px;
+    font-size: 30px;
+}
+
+p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 20px auto;
+    line-height: 1.6;
+}
+/* Navigation Bar */
+
+.navbar {
+    background-color: #123b5d;
+    color: white;
+    padding: 18px 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.nav-links a:hover {
+    color: #7dd3fc;
+}
+
+
+/* Home / Hero Section */
+
+.hero {
+    min-height: 500px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px;
+
+    background: linear-gradient(
+        135deg,
+        #123b5d,
+        #1769aa
+    );
+
+    color: white;
+}
+
+.hero h1 {
+    background: none;
+    color: white;
+
+    font-size: 48px;
+
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.hero p {
+    color: white;
+    max-width: 700px;
+}
+
+.start-button {
+    display: inline-block;
+
+    background-color: white;
+    color: #123b5d;
+
+    padding: 14px 28px;
+
+    border-radius: 25px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    margin-top: 15px;
+}
+
+.start-button:hover {
+    background-color: #dff6ff;
+}
+/* Content Sections */
+
+.content-section {
+    padding: 80px 8%;
+    text-align: center;
+    background-color: #f4f8fb;
+}
+
+.content-section h2 {
+    color: #123b5d;
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.content-section > p {
+    max-width: 750px;
+    margin: 0 auto 40px auto;
+}
+
+
+/* Safety Tip Cards */
+
+.tips-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.tip-card {
+    background-color: white;
+    padding: 30px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+    text-align: left;
+}
+
+.tip-card:hover {
+    transform: translateY(-5px);
+}
+
+.tip-icon {
+    font-size: 35px;
+}
+
+.tip-card h3 {
+    color: #1769aa;
+    font-size: 22px;
+}
+
+.tip-card p {
+    line-height: 1.6;
+}
+/* Smart Search Section */
+
+.search-section {
+    padding: 80px 8%;
+    background-color: white;
+    text-align: center;
+}
+
+.search-section h2 {
+    color: #123b5d;
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.search-section > p {
+    max-width: 750px;
+    margin: 0 auto 40px auto;
+}
+
+
+/* Search Comparison */
+
+.search-comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+.search-box {
+    padding: 30px;
+    border-radius: 15px;
+    text-align: left;
+}
+
+.poor-search {
+    background-color: #fff0f0;
+    border-left: 6px solid #d9534f;
+}
+
+.better-search {
+    background-color: #effaf1;
+    border-left: 6px solid #2e8b57;
+}
+
+.search-box h3 {
+    margin-top: 0;
+}
+
+.search-query {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+
+    font-weight: bold;
+    color: #123b5d;
+}
+
+
+/* Search Techniques */
+
+.techniques-title {
+    margin-top: 60px;
+    color: #123b5d;
+    font-size: 28px;
+}
+
+.techniques-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+.technique-card {
+    background-color: #f4f8fb;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.technique-card span {
+    font-size: 35px;
+}
+
+.technique-card h3 {
+    color: #1769aa;
+}
+
+.technique-card p {
+    line-height: 1.5;
+}
+/* Privacy Section */
+
+.privacy-section {
+    padding: 80px 8%;
+    background-color: #f4f8fb;
+    text-align: center;
+}
+
+.privacy-section h2 {
+    color: #123b5d;
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.privacy-section > p {
+    max-width: 750px;
+    margin: 0 auto 40px auto;
+}
+
+.privacy-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.privacy-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: left;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.privacy-card span {
+    font-size: 35px;
+}
+
+.privacy-card h3 {
+    color: #1769aa;
+    font-size: 22px;
+}
+
+.privacy-card p {
+    line-height: 1.6;
+}
+/* Quiz Section */
+
+.quiz-section {
+    padding: 80px 8%;
+    background-color: white;
+    text-align: center;
+}
+
+.quiz-section h2 {
+    color: #123b5d;
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.quiz-section > p {
+    max-width: 750px;
+    margin: 0 auto 40px auto;
+}
+
+.quiz-box {
+    max-width: 800px;
+    margin: auto;
+    padding: 35px;
+    background-color: #f4f8fb;
+    border-radius: 15px;
+    text-align: left;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.quiz-box h3 {
+    color: #1769aa;
+    margin-top: 25px;
+}
+
+.quiz-box label {
+    display: block;
+    margin: 12px 0;
+    padding: 10px;
+    background-color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.quiz-box input {
+    margin-right: 10px;
+}
+
+.quiz-box button {
+    display: block;
+    margin: 30px auto 10px auto;
+    padding: 12px 25px;
+    background-color: #123b5d;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.quiz-box button:hover {
+    background-color: #1769aa;
+}
+
+#quiz-result {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+/* Mobile Responsive Design */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .tips-container {
+        grid-template-columns: 1fr;
+    }
+
+    .search-comparison {
+        grid-template-columns: 1fr;
+    }
+
+    .techniques-container {
+        grid-template-columns: 1fr;
+    }
+
+    .warning-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .privacy-container {
+        grid-template-columns: 1fr;
+    }
+
+    .quiz-box {
+        padding: 20px;
+    }
+
+}
