@@ -45,7 +45,8 @@ The project helps students learn safe browsing habits, smart searching technique
 
 ## Live Website
 
-GitHub Pages is used to host the live website.
+visit the safeBrowse website here:
+https://joshithavutla.github.io/safeBrowse/
 
 ## GitHub Repository
 
