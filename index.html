@@ -1,6 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
+<style>
+.sb-box{max-width:760px;margin:20px auto;padding:18px;border:1px solid #d5dde6;border-radius:12px;background:#fff;color:#14202e;font-family:inherit}
+.sb-box h3{margin:0 0 10px}
+.sb-row{display:flex;gap:8px;flex-wrap:wrap}
+.sb-row input,.sb-row select{padding:10px 12px;border:1px solid #c5cfda;border-radius:8px;font:inherit;min-width:0}
+.sb-row input[type=text]{flex:1 1 200px}
+.sb-row button{padding:10px 18px;border:0;border-radius:8px;background:#1f7a5a;color:#fff;font:inherit;font-weight:600;cursor:pointer}
+.sb-opts{margin-top:10px;display:flex;gap:14px;flex-wrap:wrap;font-size:.9rem;color:#5b6b7d}
+.sb-opts input[type=text]{padding:5px 8px;border:1px solid #c5cfda;border-radius:6px;width:150px}
+.sb-prev{margin-top:10px;font-family:monospace;font-size:.85rem;color:#5b6b7d;word-break:break-all}
+.sb-meter{height:10px;background:#e3e9ef;border-radius:6px;overflow:hidden;margin:10px 0 6px}
+.sb-meter div{height:100%;transition:width .3s}
+.sb-good{color:#1f7a5a}.sb-warn{color:#b7791f}.sb-bad{color:#c0392b}
+.sb-box ul{padding-left:20px;margin:6px 0}
+</style>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
+:root{
+  --c1:#7f5af0;   /* main purple */
+  --c2:#ff6ac1;   /* pink */
+  --c3:#ffd6a5;   /* peach */
+  --c4:#8ec5fc;   /* sky blue */
+  --ink:#2a1f4d;  /* text colour */
+}
+
+body{
+  margin:0;
+  font-family:'Poppins','Segoe UI',system-ui,sans-serif;
+  color:var(--ink);
+  background:linear-gradient(135deg,var(--c3) 0%,#ff9a9e 30%,#a18cd1 65%,var(--c4) 100%);
+  background-attachment:fixed;
+  min-height:100vh;
+}
+
+/* top bar / navigation */
+header,nav{
+  background:linear-gradient(90deg,var(--c1),var(--c2));
+  color:#fff;
+  box-shadow:0 6px 24px rgba(127,90,240,.35);
+}
+header h1,nav a,nav{color:#fff}
+nav a{border-radius:999px;padding:6px 14px;text-decoration:none;transition:.25s}
+nav a:hover{background:rgba(255,255,255,.25)}
+
+/* frosted glass cards */
+section,.card,.sb-box{
+  background:rgba(255,255,255,.72)!important;
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,.7)!important;
+  border-radius:22px!important;
+  box-shadow:0 10px 30px rgba(80,50,160,.18);
+  color:var(--ink)!important;
+  transition:transform .25s,box-shadow .25s;
+}
+section:hover,.card:hover{transform:translateY(-3px);box-shadow:0 16px 38px rgba(80,50,160,.25)}
+
+/* colourful headings */
+section h2,.sb-box h3{
+  background:linear-gradient(90deg,var(--c1),var(--c2));
+  -webkit-background-clip:text;background-clip:text;
+  color:transparent!important;
+  font-weight:700;
+}
+
+/* vibrant buttons */
+button,.btn,a.button{
+  background:linear-gradient(90deg,var(--c1),var(--c2))!important;
+  color:#fff!important;
+  border:0!important;
+  border-radius:999px!important;
+  padding:10px 22px;
+  font-family:inherit;font-weight:600;
+  box-shadow:0 6px 16px rgba(255,106,193,.35);
+  cursor:pointer;transition:.25s;
+}
+button:hover,.btn:hover,a.button:hover{transform:translateY(-2px) scale(1.03);box-shadow:0 10px 22px rgba(127,90,240,.45)}
+
+/* inputs */
+input[type=text],select{
+  border:2px solid #e3d8ff!important;
+  border-radius:14px!important;
+  padding:10px 14px;
+  font-family:inherit;
+  background:#fff;
+  outline:none;
+  transition:.2s;
+}
+input[type=text]:focus,select:focus{border-color:var(--c2)!important;box-shadow:0 0 0 4px rgba(255,106,193,.2)}
+
+a{color:var(--c1)}
+footer{color:#fff;text-align:center;padding:24px}
+</style>
+<style>
+/* Main heading: dark, bold and readable */
+h1,
+header h1,
+.hero h1{
+  color:#2a1f4d !important;
+  -webkit-text-fill-color:#2a1f4d !important;
+  background:none !important;
+  font-weight:800;
+  text-shadow:0 2px 0 rgba(255,255,255,.6);
+}
+
+/* Text under the main heading */
+header p,
+.hero p,
+.hero{
+  color:#3b2d6b !important;
+  font-weight:500;
+}
+
+/* Section headings: stronger, deeper colours */
+section h2,
+.sb-box h3{
+  background:linear-gradient(90deg,#5b2fd6,#d6249f) !important;
+  -webkit-background-clip:text !important;
+  background-clip:text !important;
+  color:transparent !important;
+  -webkit-text-fill-color:transparent;
+  font-weight:800;
+}
+</style>
 <head>
     <meta charset="UTF-8">
 
@@ -247,8 +371,26 @@
 
 
         </div>
+<section id="phishing" class="ps">
+  <h2>🎣 Phishing</h2>
+  <p>Phishing is when scammers pretend to be someone you trust to steal your passwords, OTPs or money.</p>
 
-    </section>
+  <h3>Warning signs</h3>
+  <ul>
+    <li>⏰ Urgent or threatening message</li>
+    <li>🔗 Strange or misspelled link</li>
+    <li>🔑 Asks for your OTP or password</li>
+    <li>🎁 “You won a prize!”</li>
+  </ul>
+
+  <h3>What to do</h3>
+  <ul>
+    <li>✅ Don’t click unknown links</li>
+    <li>✅ Open the official site yourself</li>
+    <li>✅ Change your password if you clicked</li>
+  </ul>
+</section>
+ 
     <!-- Privacy Section -->
 <section id="privacy" class="privacy-section">
 
@@ -376,10 +518,120 @@
         <div id="quiz-result"></div>
 
     </div>
+    <!-- Smart Search bar -->
+<div class="sb-box" id="sb-search">
+  <h3>🔎 Smart Search</h3>
+  <div class="sb-row">
+    <input type="text" id="sb-q" placeholder="Type what you want to find…">
+    <select id="sb-engine">
+      <option value="ddg">DuckDuckGo</option>
+      <option value="brave">Brave</option>
+      <option value="google">Google</option>
+      <option value="bing">Bing</option>
+    </select>
+    <button id="sb-go">Search</button>
+  </div>
+  <div class="sb-opts">
+    <label><input type="checkbox" id="sb-exact"> Exact phrase</label>
+    <label><input type="checkbox" id="sb-safe" checked> Strict safe search</label>
+    <label>Site <input type="text" id="sb-site" placeholder="e.g. gov"></label>
+    <label>File
+      <select id="sb-ft"><option value="">Any</option><option>pdf</option><option>docx</option><option>pptx</option></select>
+    </label>
+    <label>Time
+      <select id="sb-time"><option value="">Any</option><option value="d">Day</option><option value="w">Week</option><option value="m">Month</option><option value="y">Year</option></select>
+    </label>
+  </div>
+  <div class="sb-prev" id="sb-prev"></div>
+</div>
+
+<!-- Link Check bar -->
+<div class="sb-box" id="sb-link">
+  <h3>🔗 Link Safety Check</h3>
+  <div class="sb-row">
+    <input type="text" id="sb-url" placeholder="Paste a link to check, e.g. paypa1-login.example.top/verify">
+    <button id="sb-check">Check link</button>
+  </div>
+  <div id="sb-result"></div>
+</div>
 
 </section>
 <script src="script.js"></script>
+<script>
+(function(){
+  const $ = id => document.getElementById(id);
+  const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 
+  /* ---------- Smart search ---------- */
+  function buildQuery(){
+    let q = $("sb-q").value.trim();
+    if (!q) return "";
+    if ($("sb-exact").checked) q = '"' + q.replace(/"/g, "") + '"';
+    const site = $("sb-site").value.trim().replace(/^https?:\/\//, "").replace(/\/.*$/, "");
+    if (site) q += " site:" + site;
+    if ($("sb-ft").value) q += " filetype:" + $("sb-ft").value;
+    return q;
+  }
+  function searchURL(){
+    const q = encodeURIComponent(buildQuery()), e = $("sb-engine").value,
+          s = $("sb-safe").checked, t = $("sb-time").value;
+    if (e === "ddg")   return "https://duckduckgo.com/?q=" + q + (s ? "&kp=1" : "&kp=-2") + (t ? "&df=" + t : "");
+    if (e === "brave") return "https://search.brave.com/search?q=" + q + (s ? "&safesearch=strict" : "") + (t ? "&tf=p" + t : "");
+    if (e === "google")return "https://www.google.com/search?q=" + q + (s ? "&safe=active" : "") + (t ? "&tbs=qdr:" + t : "");
+    return "https://www.bing.com/search?q=" + q + (s ? "&adlt=strict" : "");
+  }
+  function showPreview(){ $("sb-prev").textContent = buildQuery() ? "Search: " + buildQuery() : ""; }
+  function doSearch(){
+    if (!buildQuery()) return;
+    window.open(searchURL(), "_blank", "noopener");
+  }
+  ["sb-q","sb-exact","sb-safe","sb-site","sb-ft","sb-time","sb-engine"].forEach(id => $(id).addEventListener("input", showPreview));
+  $("sb-go").onclick = doSearch;
+  $("sb-q").addEventListener("keydown", e => { if (e.key === "Enter") doSearch(); });
+
+  /* ---------- Link checker ---------- */
+  const LEGIT = {paypal:"paypal.com",google:"google.com",apple:"apple.com",microsoft:"microsoft.com",amazon:"amazon.com",facebook:"facebook.com",netflix:"netflix.com",instagram:"instagram.com"};
+  const BADTLD = ["zip","mov","xyz","top","click","tk","ml","ga","cf","gq","work","icu","buzz"];
+  const SHORT = ["bit.ly","tinyurl.com","t.co","goo.gl","is.gd","cutt.ly"];
+  function analyze(raw){
+    const s = raw.trim(); if (!s) return null;
+    const hasScheme = /^[a-z][a-z0-9+.-]*:\/\//i.test(s);
+    let u; try { u = new URL(hasScheme ? s : "https://" + s); } catch(e){ return {error:true}; }
+    const host = u.hostname.toLowerCase(), labels = host.split("."), found = []; let score = 0;
+    const add = (p, t) => { score += p; found.push([p >= 25 ? "sb-bad" : "sb-warn", t]); };
+    if (hasScheme && u.protocol === "http:") add(25, "Uses plain HTTP, so it isn’t encrypted.");
+    if (u.username || u.password) add(35, "Contains an @ section, a trick to hide the real destination.");
+    if (/^\d{1,3}(\.\d{1,3}){3}$/.test(host)) add(30, "Uses a raw IP address instead of a domain name.");
+    if (host.includes("xn--")) add(25, "Punycode domain, which can imitate familiar letters.");
+    if (labels.length > 4) add(15, "Too many subdomains can hide the real domain.");
+    if (BADTLD.includes(labels[labels.length-1])) add(15, "Domain ending “." + labels[labels.length-1] + "” is often used by throwaway sites.");
+    if (SHORT.includes(host)) add(15, "Link shortener hides the final destination.");
+    const reg = labels.slice(-2).join(".");
+    const norm = host.replace(/0/g,"o").replace(/1/g,"l").replace(/3/g,"e").replace(/5/g,"s");
+    for (const b in LEGIT) {
+      if (norm.includes(b) && reg !== LEGIT[b] && !host.endsWith("." + LEGIT[b])) {
+        add(35, "Looks like it imitates “" + b + "”, but the real domain is " + LEGIT[b] + "."); break;
+      }
+    }
+    if (/(login|verify|secure|account|update|wallet|password|free|prize|claim)/i.test(host + u.pathname)) add(10, "Contains account or urgency words common in phishing.");
+    if (!found.length) found.push(["sb-good", "No common warning signs found in the address."]);
+    return {score: Math.min(score, 100), found, host};
+  }
+  function runCheck(){
+    const r = analyze($("sb-url").value), out = $("sb-result");
+    if (!r) { out.innerHTML = '<p>Paste a link to check.</p>'; return; }
+    if (r.error) { out.innerHTML = '<p class="sb-bad">That doesn’t look like a valid link.</p>'; return; }
+    const v = r.score < 20 ? ["Looks OK","sb-good","#1f7a5a"] : r.score < 45 ? ["Be careful","sb-warn","#b7791f"] : ["High risk","sb-bad","#c0392b"];
+    out.innerHTML = '<p class="' + v[1] + '" style="font-size:1.1rem;font-weight:700;margin:10px 0 0">' + v[0] + ' (risk ' + r.score + '/100)</p>' +
+      '<div class="sb-meter"><div style="width:' + Math.max(r.score, 4) + '%;background:' + v[2] + '"></div></div>' +
+      '<div>Domain: <b>' + esc(r.host) + '</b></div><ul>' +
+      r.found.map(f => '<li class="' + f[0] + '">' + esc(f[1]) + '</li>').join("") + '</ul>' +
+      '<small>Warning signs only, not a guarantee.</small>';
+  }
+  $("sb-check").onclick = runCheck;
+  $("sb-url").addEventListener("keydown", e => { if (e.key === "Enter") runCheck(); });
+})();
+</script>
 </body>
 
 </html>
